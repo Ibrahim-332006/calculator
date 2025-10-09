@@ -1,14 +1,14 @@
 import tkinter as tk
 
 this_Calc = [
-    ["AC", "+/-", "%", "/"],
-    ["7", "8", "9", "x"],
+    ["AC", "+/-", "%", "÷"],
+    ["7", "8", "9", "×"],
     ["4", "5", "6", "-"],
     ["1", "2", "3", "+"],
-    ["?", "0", ".", "="],
+    ["", "0", ".", "="],
 ]
 
-right_calc = ["/", "x", "-", "+", "="]
+right_calc = ["÷", "×", "-", "+", "="]
 top_calc = ["AC", "+/-", "%"]
 
 row_count = len(this_Calc)  # 5
@@ -95,15 +95,15 @@ def button_clicked(value):
             elif operator == "-":
                 label["text"] = remove_zero(numA - numB)
 
-            elif operator == "x":
+            elif operator == "×":
                 label["text"] = remove_zero(numA * numB)
 
-            elif operator == "/":
+            elif operator == "÷":
                 label["text"] = remove_zero(numA / numB)
 
             calc_all()
 
-        elif value in "+-x/":
+        elif value in "+-×÷":
             if operator is None:
                 A = label["text"]
                 label["text"] = "0"
@@ -152,3 +152,4 @@ window.geometry(f"{window_width}x{window_height}+{window_x}+{window_y}")
 
 
 window.mainloop()
+
